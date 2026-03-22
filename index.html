@@ -3,352 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reinigungsservice Prestin â Chemische Reinigung Berlin</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Reinigungsservice Prestin &ndash; Chemische Reinigung Berlin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --primary: #1a3a5c;
-    --primary-light: #2d5f8a;
-    --accent: #4a9eda;
-    --accent-soft: #e8f4fd;
-    --bg: #f7f9fc;
-    --white: #ffffff;
-    --text: #1e2a38;
-    --text-light: #5a6a7a;
-    --border: #d8e4ee;
-    --star-on: #f5a623;
-    --star-off: #dce3ec;
-    --green: #2e7d52;
-    --shadow: 0 4px 24px rgba(26,58,92,0.10);
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;color:#1a1a2e;background:#f8f9fb;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
 
-  /* NAV */
-  nav {
-    background: var(--primary);
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-  }
-  .nav-logo { color: var(--white); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.02em; }
-  .nav-logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 28px; list-style: none; }
-  .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--accent); }
-  @media (max-width: 640px) { .nav-links { display: none; } }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,0.08);padding:0 5%}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#1a4a6e}
+.nav-logo span{color:#4a9edd}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.88rem;font-weight:500;color:#444;transition:color 0.2s;letter-spacing:0.02em}
+.nav-links a:hover{color:#1a4a6e}
+.nav-cta{background:#1a4a6e;color:#fff!important;padding:0.45rem 1.2rem;border-radius:25px;font-size:0.85rem!important;transition:background 0.2s!important}
+.nav-cta:hover{background:#0f3254!important;color:#fff!important}
 
-  /* HERO */
-  .hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, #3a7db5 100%);
-    color: var(--white);
-    padding: 80px 24px 72px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -80px;
-    width: 340px; height: 340px;
-    background: rgba(74,158,218,0.12);
-    border-radius: 50%;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: -60px;
-    width: 280px; height: 280px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-  }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(74,158,218,0.22);
-    border: 1px solid rgba(74,158,218,0.4);
-    color: #a8d8f0;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 6px 18px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-  }
-  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em; }
-  .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.75); margin-bottom: 28px; font-weight: 300; }
-  .hero-rating {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 10px 22px;
-    border-radius: 40px;
-    font-size: 0.95rem;
-  }
-  .stars { display: flex; gap: 3px; }
-  .star { font-size: 1rem; }
-  .star.on { color: var(--star-on); }
-  .star.off { color: rgba(255,255,255,0.3); }
-  .star.half { color: var(--star-on); }
-  .rating-text { color: rgba(255,255,255,0.9); font-weight: 600; }
-  .rating-count { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
-  .hero-cta { margin-top: 36px; }
-  .btn-primary {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--white);
-    padding: 14px 34px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background 0.2s, transform 0.15s;
-    box-shadow: 0 4px 16px rgba(74,158,218,0.35);
-  }
-  .btn-primary:hover { background: #3a8ec4; transform: translateY(-1px); }
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=1200&h=600&fit=crop');background-size:cover;background-position:center;filter:brightness(0.45)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,74,110,0.7) 0%,rgba(10,30,50,0.55) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:800px;margin:0 auto}
+.hero-badge{display:inline-block;background:rgba(74,158,221,0.25);border:1px solid rgba(74,158,221,0.6);color:#9dd4f7;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 1.2rem;border-radius:20px;margin-bottom:1.5rem;backdrop-filter:blur(4px)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,4.2rem);color:#fff;font-weight:700;line-height:1.15;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.hero-subtitle{color:rgba(255,255,255,0.85);font-size:1.1rem;margin-bottom:2rem;font-weight:300}
+.hero-rating{display:flex;align-items:center;justify-content:center;gap:0.6rem;margin-bottom:2.5rem}
+.stars-hero{color:#f5c518;font-size:1.5rem;letter-spacing:2px}
+.rating-text{color:rgba(255,255,255,0.9);font-size:0.95rem;font-weight:500}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#4a9edd;color:#fff;padding:0.9rem 2.2rem;border-radius:30px;font-weight:600;font-size:0.95rem;transition:all 0.3s;box-shadow:0 4px 20px rgba(74,158,221,0.4)}
+.btn-primary:hover{background:#3385c7;transform:translateY(-2px);box-shadow:0 8px 30px rgba(74,158,221,0.5)}
+.btn-secondary{background:rgba(255,255,255,0.15);color:#fff;padding:0.9rem 2.2rem;border-radius:30px;font-weight:600;font-size:0.95rem;border:2px solid rgba(255,255,255,0.5);transition:all 0.3s;backdrop-filter:blur(4px)}
+.btn-secondary:hover{background:rgba(255,255,255,0.25);transform:translateY(-2px)}
 
-  /* SECTIONS */
-  section { padding: 72px 24px; }
-  .container { max-width: 1000px; margin: 0 auto; }
-  .section-label {
-    display: inline-block;
-    color: var(--accent);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; color: var(--primary); margin-bottom: 16px; letter-spacing: -0.02em; }
-  .divider { width: 48px; height: 4px; background: var(--accent); border-radius: 2px; margin-bottom: 32px; }
+/* SECTIONS GENERAL */
+section{padding:5rem 5%}
+.container{max-width:1200px;margin:0 auto}
+.section-label{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#4a9edd;margin-bottom:0.6rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:#1a1a2e;font-weight:700;margin-bottom:1rem}
+.section-divider{width:60px;height:4px;background:linear-gradient(90deg,#1a4a6e,#4a9edd);border-radius:2px;margin-bottom:2.5rem}
 
-  /* ÃBER UNS */
-  #ueber-uns { background: var(--white); }
-  .ueber-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-  @media (max-width: 700px) { .ueber-grid { grid-template-columns: 1fr; gap: 28px; } }
-  .ueber-text p { color: var(--text-light); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; }
-  .ueber-features { display: flex; flex-direction: column; gap: 16px; }
-  .feature-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px 20px;
-  }
-  .feature-icon {
-    width: 44px; height: 44px;
-    background: var(--accent-soft);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-  }
-  .feature-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--primary); margin-bottom: 4px; }
-  .feature-card p { font-size: 0.875rem; color: var(--text-light); line-height: 1.5; }
+/* ABOUT */
+.about{background:#fff}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-img-wrap{position:relative}
+.about-img-wrap img{border-radius:16px;box-shadow:0 20px 60px rgba(26,74,110,0.18);width:100%;height:400px;object-fit:cover}
+.about-img-accent{position:absolute;bottom:-18px;right:-18px;width:80px;height:80px;background:linear-gradient(135deg,#1a4a6e,#4a9edd);border-radius:12px;z-index:-1}
+.about-text p{color:#555;font-size:1rem;line-height:1.85;margin-bottom:1.2rem}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.feature-item{display:flex;align-items:flex-start;gap:0.7rem}
+.feature-icon{width:38px;height:38px;min-width:38px;background:linear-gradient(135deg,#e8f4fd,#cce7f8);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.feature-text{font-size:0.88rem;color:#444;font-weight:500;padding-top:0.45rem}
 
-  /* ÃFFNUNGSZEITEN */
-  #oeffnungszeiten { background: var(--bg); }
-  .hours-card {
-    background: var(--white);
-    border-radius: 16px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    max-width: 560px;
-  }
-  .hours-table { width: 100%; border-collapse: collapse; }
-  .hours-table tr { border-bottom: 1px solid var(--border); }
-  .hours-table tr:last-child { border-bottom: none; }
-  .hours-table td { padding: 14px 24px; font-size: 0.95rem; }
-  .hours-table td:first-child { font-weight: 600; color: var(--primary); width: 50%; }
-  .hours-table td:last-child { color: var(--text-light); text-align: right; }
-  .hours-table tr.today { background: var(--accent-soft); }
-  .hours-table tr.today td:first-child { color: var(--accent); }
-  .closed { color: #c0392b !important; font-weight: 500 !important; }
-  .open-time { color: var(--green) !important; font-weight: 500 !important; }
+/* HOURS */
+.hours{background:linear-gradient(135deg,#1a4a6e 0%,#0f2e45 100%);color:#fff}
+.hours .section-label{color:#9dd4f7}
+.hours .section-title{color:#fff}
+.hours-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border-radius:20px;border:1px solid rgba(255,255,255,0.12);overflow:hidden;max-width:700px;margin:0 auto}
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table tr{border-bottom:1px solid rgba(255,255,255,0.08);transition:background 0.2s}
+.hours-table tr:last-child{border-bottom:none}
+.hours-table tr:hover{background:rgba(255,255,255,0.06)}
+.hours-table td{padding:1rem 1.8rem;font-size:0.95rem}
+.hours-table td:first-child{font-weight:600;color:rgba(255,255,255,0.85);width:45%}
+.hours-table td:last-child{color:rgba(255,255,255,0.7);text-align:right}
+.hours-table .closed{color:#f87a7a;font-weight:500}
+.hours-table .today{background:rgba(74,158,221,0.2)}
+.hours-table .today td:first-child{color:#9dd4f7}
+.hours-table .today td:last-child{color:#9dd4f7;font-weight:600}
+.hours-icon{display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem}
+.hours-icon-inner{width:70px;height:70px;background:rgba(74,158,221,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;border:2px solid rgba(74,158,221,0.4)}
 
-  /* BEWERTUNGEN */
-  #bewertungen { background: var(--white); }
-  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-  .review-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 24px;
-    transition: box-shadow 0.2s;
-  }
-  .review-card:hover { box-shadow: var(--shadow); }
-  .review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-  .reviewer-avatar {
-    width: 42px; height: 42px;
-    background: linear-gradient(135deg, var(--primary-light), var(--accent));
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-weight: 700; font-size: 1rem;
-    flex-shrink: 0;
-  }
-  .reviewer-info h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); }
-  .review-stars { display: flex; gap: 2px; margin-top: 3px; }
-  .review-stars .star { font-size: 0.8rem; color: var(--star-on); }
-  .review-stars .star.off { color: var(--star-off); }
-  .review-text { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; font-style: italic; }
-  .review-text::before { content: '\201E'; color: var(--accent); font-size: 1.4rem; font-style: normal; line-height: 0; vertical-align: -6px; margin-right: 3px; }
-  .review-text::after { content: '\201C'; color: var(--accent); font-size: 1.4rem; font-style: normal; line-height: 0; vertical-align: -6px; margin-left: 3px; }
-  .overall-rating {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    background: var(--accent-soft);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 24px 28px;
-    margin-bottom: 36px;
-    flex-wrap: wrap;
-  }
-  .overall-score { font-size: 3.5rem; font-weight: 700; color: var(--primary); line-height: 1; }
-  .overall-meta h4 { font-weight: 600; color: var(--primary); font-size: 1rem; }
-  .overall-meta p { color: var(--text-light); font-size: 0.875rem; }
-  .overall-stars { display: flex; gap: 4px; margin: 6px 0 4px; }
-  .overall-stars .star { font-size: 1.2rem; }
+/* REVIEWS */
+.reviews{background:#f0f6fc}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.review-card{background:#fff;border-radius:16px;padding:1.8rem;box-shadow:0 4px 20px rgba(26,74,110,0.08);transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e8f0f8;display:flex;flex-direction:column;gap:1rem}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(26,74,110,0.14)}
+.review-header{display:flex;align-items:center;gap:0.8rem}
+.reviewer-avatar{width:44px;height:44px;min-width:44px;border-radius:50%;background:linear-gradient(135deg,#1a4a6e,#4a9edd);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.1rem}
+.reviewer-info{flex:1}
+.reviewer-name{font-weight:600;font-size:0.95rem;color:#1a1a2e}
+.review-date{font-size:0.78rem;color:#888;margin-top:0.1rem}
+.review-stars{display:flex;gap:2px}
+.star{font-size:1rem}
+.star.filled{color:#f5c518}
+.star.empty{color:#ddd}
+.review-text{font-size:0.9rem;color:#555;line-height:1.7;font-style:italic;flex:1}
+.review-text-empty{font-size:0.85rem;color:#aaa;font-style:italic}
+.reviews-summary{display:flex;align-items:center;gap:2rem;background:#1a4a6e;border-radius:16px;padding:2rem 2.5rem;margin-bottom:3rem;color:#fff;flex-wrap:wrap}
+.summary-score{font-family:'Playfair Display',serif;font-size:4rem;font-weight:700;line-height:1;color:#fff}
+.summary-stars{color:#f5c518;font-size:1.4rem;letter-spacing:3px;margin-bottom:0.3rem}
+.summary-count{font-size:0.85rem;color:rgba(255,255,255,0.7)}
+.summary-divider{width:1px;height:70px;background:rgba(255,255,255,0.2)}
+.summary-text{font-size:0.95rem;color:rgba(255,255,255,0.85);max-width:350px;line-height:1.6}
 
-  /* KONTAKT */
-  #kontakt { background: var(--bg); }
-  .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-  @media (max-width: 700px) { .kontakt-grid { grid-template-columns: 1fr; gap: 28px; } }
-  .kontakt-info { display: flex; flex-direction: column; gap: 20px; }
-  .kontakt-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-  }
-  .kontakt-icon {
-    width: 46px; height: 46px;
-    background: var(--accent-soft);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-  }
-  .kontakt-item h4 { font-size: 0.8rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-  .kontakt-item p, .kontakt-item a { font-size: 1rem; color: var(--text); font-weight: 500; text-decoration: none; }
-  .kontakt-item a:hover { color: var(--accent); }
-  .cta-box {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    border-radius: 16px;
-    padding: 40px 36px;
-    color: var(--white);
-    text-align: center;
-  }
-  .cta-box h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
-  .cta-box p { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 28px; line-height: 1.7; }
-  .btn-cta {
-    display: inline-block;
-    background: var(--white);
-    color: var(--primary);
-    padding: 14px 32px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-cta:hover { background: var(--accent-soft); transform: translateY(-1px); }
+/* CONTACT */
+.contact{background:#fff}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem}
+.contact-icon{width:50px;height:50px;min-width:50px;background:linear-gradient(135deg,#e8f4fd,#cce7f8);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.contact-detail strong{display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:0.25rem}
+.contact-detail span,.contact-detail a{font-size:1rem;color:#1a1a2e;font-weight:500}
+.contact-detail a:hover{color:#1a4a6e}
+.contact-cta{background:linear-gradient(135deg,#1a4a6e,#0f2e45);border-radius:20px;padding:2.5rem;color:#fff;text-align:center}
+.contact-cta h3{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:0.8rem}
+.contact-cta p{color:rgba(255,255,255,0.8);margin-bottom:2rem;font-size:0.95rem;line-height:1.6}
+.btn-cta-large{display:inline-block;background:#4a9edd;color:#fff;padding:1.1rem 2.5rem;border-radius:30px;font-weight:700;font-size:1rem;transition:all 0.3s;box-shadow:0 4px 20px rgba(74,158,221,0.4);width:100%;text-align:center}
+.btn-cta-large:hover{background:#3385c7;transform:translateY(-2px);box-shadow:0 8px 30px rgba(74,158,221,0.5)}
+.phone-display{font-size:1.3rem;font-weight:700;color:#9dd4f7;margin-bottom:1.5rem;display:block}
 
-  /* FOOTER */
-  footer {
-    background: var(--primary);
-    color: rgba(255,255,255,0.65);
-    text-align: center;
-    padding: 32px 24px;
-    font-size: 0.875rem;
-  }
-  footer strong { color: rgba(255,255,255,0.9); }
-  footer p { margin-bottom: 6px; }
-  footer p:last-child { margin-bottom: 0; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+/* FOOTER */
+footer{background:#0a1e32;color:rgba(255,255,255,0.6);padding:2rem 5%;text-align:center;font-size:0.85rem}
+footer strong{color:rgba(255,255,255,0.9)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+ .nav-links{display:none}
+ .about-inner{grid-template-columns:1fr;gap:2.5rem}
+ .contact-inner{grid-template-columns:1fr;gap:2.5rem}
+ .about-features{grid-template-columns:1fr}
+ .hours-table td{padding:0.85rem 1.2rem}
+ .summary-divider{display:none}
+}
+@media(max-width:600px){
+ section{padding:3.5rem 4%}
+ .hero h1{font-size:2rem}
+ .hero-btns{flex-direction:column;align-items:center}
+ .btn-primary,.btn-secondary{width:100%;max-width:280px;text-align:center}
+ .reviews-grid{grid-template-columns:1fr}
+ .reviews-summary{flex-direction:column;gap:1rem;text-align:center}
+ .summary-divider{display:none}
+ .hours-table td{font-size:0.85rem;padding:0.75rem 1rem}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Reinigungsservice <span>Prestin</span></div>
-  <ul class="nav-links">
-    <li><a href="#ueber-uns">Ãber uns</a></li>
-    <li><a href="#oeffnungszeiten">Ãffnungszeiten</a></li>
-    <li><a href="#bewertungen">Bewertungen</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
-  </ul>
+  <div class="nav-inner">
+    <div class="nav-logo">Reinigungsservice <span>Prestin</span></div>
+    <ul class="nav-links">
+      <li><a href="#ueber-uns">&Uuml;ber uns</a></li>
+      <li><a href="#oeffnungszeiten">&Ouml;ffnungszeiten</a></li>
+      <li><a href="#bewertungen">Bewertungen</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-badge">Chemische Reinigung Â· Berlin Pankow</div>
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Chemische Reinigung &bull; Berlin Pankow</div>
     <h1>Reinigungsservice Prestin</h1>
-    <p class="hero-sub">Ihre professionelle chemische Reinigung in Berlin-Pankow</p>
+    <p class="hero-subtitle">Professionelle Textilpflege &amp; Kleiderreinigung in Berlin &ndash; Dietzgenstra&szlig;e 28</p>
     <div class="hero-rating">
-      <div class="stars">
-        <span class="star on">â</span>
-        <span class="star on">â</span>
-        <span class="star on">â</span>
-        <span class="star on">â</span>
-        <span class="star off">â</span>
-      </div>
-      <span class="rating-text">3,9</span>
-      <span class="rating-count">16 Bewertungen</span>
+      <span class="stars-hero">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+      <span class="rating-text">3,9 / 5 &bull; 16 Bewertungen</span>
     </div>
-    <div class="hero-cta">
-      <a href="#kontakt" class="btn-primary">Jetzt Kontakt aufnehmen</a>
+    <div class="hero-btns">
+      <a href="#kontakt" class="btn-primary">Jetzt anrufen</a>
+      <a href="#oeffnungszeiten" class="btn-secondary">&Ouml;ffnungszeiten</a>
     </div>
   </div>
 </section>
 
-<!-- ÃBER UNS -->
-<section id="ueber-uns">
+<!-- ABOUT -->
+<section class="about" id="ueber-uns">
   <div class="container">
-    <div class="ueber-grid">
-      <div class="ueber-text">
-        <span class="section-label">Ãber uns</span>
-        <h2>Kompetente Pflege fÃ¼r Ihre Kleidung</h2>
-        <div class="divider"></div>
-        <p>Der Reinigungsservice Prestin ist Ihr verlÃ¤sslicher Partner fÃ¼r chemische Reinigung im Berliner Bezirk Pankow. Seit Jahren sorgen wir dafÃ¼r, dass Ihre Textilien, AnzÃ¼ge, Kleider und empfindlichen Stoffe professionell und schonend gereinigt werden.</p>
-        <p>Mit Fachkenntnis und modernen Reinigungsverfahren behandeln wir jedes KleidungsstÃ¼ck individuell â damit es frisch, gepflegt und in bestem Zustand zu Ihnen zurÃ¼ckkommt.</p>
+    <div class="about-inner">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?w=600&h=400&fit=crop" alt="Reinigungsservice Prestin &ndash; Professionelle Textilpflege">
+        <div class="about-img-accent"></div>
       </div>
-      <div class="ueber-features">
-        <div class="feature-card">
-          <div class="feature-icon">ð</div>
-          <div>
-            <h4>Textilreinigung</h4>
-            <p>Schonende Reinigung fÃ¼r AnzÃ¼ge, Kleider, Jacken und empfindliche Stoffe aller Art.</p>
+      <div class="about-text">
+        <div class="section-label">&Uuml;ber uns</div>
+        <h2 class="section-title">Ihr Experte f&uuml;r Textilpflege in Berlin Pankow</h2>
+        <div class="section-divider"></div>
+        <p>Willkommen beim <strong>Reinigungsservice Prestin</strong> &ndash; Ihrem zuverl&auml;ssigen Partner f&uuml;r professionelle chemische Reinigung in Berlin-Pankow. Seit Jahren betreuen wir unsere Kunden mit Sorgfalt und Fachkenntnis rund um das Thema Textilpflege.</p>
+        <p>Ob feines Hemd, elegantes Abendkleid, empfindlicher Anzug oder Haushaltstextilien &ndash; bei uns sind Ihre Kleidungsst&uuml;cke in besten H&auml;nden. Wir verwenden moderne Reinigungsverfahren, die schonend mit den Fasern Ihrer Textilien umgehen und dabei optimale Ergebnisse liefern.</p>
+        <p>Unser Gesch&auml;ft in der Dietzgenstra&szlig;e 28 ist f&uuml;r Sie von Dienstag bis Samstag ge&ouml;ffnet und gut mit &ouml;ffentlichen Verkehrsmitteln erreichbar.</p>
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon">&#9745;</div>
+            <div class="feature-text">Professionelle Chemischreinigung</div>
           </div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">âï¸</div>
-          <div>
-            <h4>Ãnderungsservice</h4>
-            <p>Professionelle Anpassungen und Reparaturen an Ihrer Kleidung durch erfahrene HÃ¤nde.</p>
+          <div class="feature-item">
+            <div class="feature-icon">&#9745;</div>
+            <div class="feature-text">Hemd- &amp; Blusenpflege</div>
           </div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">ð </div>
-          <div>
-            <h4>Heimtextilien</h4>
-            <p>Reinigung von Gardinen, Decken, Kissen und anderen Heimtextilien auf hÃ¶chstem Niveau.</p>
+          <div class="feature-item">
+            <div class="feature-icon">&#9745;</div>
+            <div class="feature-text">Anzug- &amp; Kleidreinigung</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">&#9745;</div>
+            <div class="feature-text">Schnelle Bearbeitungszeiten</div>
           </div>
         </div>
       </div>
@@ -356,175 +216,212 @@
   </div>
 </section>
 
-<!-- ÃFFNUNGSZEITEN -->
-<section id="oeffnungszeiten">
-  <div class="container">
-    <span class="section-label">Ãffnungszeiten</span>
-    <h2>Wann wir fÃ¼r Sie da sind</h2>
-    <div class="divider"></div>
+<!-- HOURS -->
+<section class="hours" id="oeffnungszeiten">
+  <div class="container" style="text-align:center">
+    <div class="section-label">&Ouml;ffnungszeiten</div>
+    <h2 class="section-title">Wann wir f&uuml;r Sie da sind</h2>
+    <div class="section-divider" style="margin:0 auto 2.5rem auto"></div>
+    <div class="hours-icon">
+      <div class="hours-icon-inner">&#128336;</div>
+    </div>
     <div class="hours-card">
       <table class="hours-table">
-        <tr>
-          <td>Montag</td>
-          <td class="closed">Geschlossen</td>
-        </tr>
-        <tr>
-          <td>Dienstag</td>
-          <td class="open-time">10:00 â 18:30 Uhr</td>
-        </tr>
-        <tr>
-          <td>Mittwoch</td>
-          <td class="open-time">10:00 â 18:00 Uhr</td>
-        </tr>
-        <tr>
-          <td>Donnerstag</td>
-          <td class="open-time">10:00 â 18:30 Uhr</td>
-        </tr>
-        <tr>
-          <td>Freitag</td>
-          <td class="open-time">10:00 â 18:00 Uhr</td>
-        </tr>
-        <tr>
-          <td>Samstag</td>
-          <td class="open-time">10:00 â 14:00 Uhr</td>
-        </tr>
-        <tr>
-          <td>Sonntag</td>
-          <td class="closed">Geschlossen</td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>Montag</td>
+            <td class="closed">Geschlossen</td>
+          </tr>
+          <tr>
+            <td>Dienstag</td>
+            <td>10:00 &ndash; 18:30 Uhr</td>
+          </tr>
+          <tr>
+            <td>Mittwoch</td>
+            <td>10:00 &ndash; 18:00 Uhr</td>
+          </tr>
+          <tr>
+            <td>Donnerstag</td>
+            <td>10:00 &ndash; 18:30 Uhr</td>
+          </tr>
+          <tr>
+            <td>Freitag</td>
+            <td>10:00 &ndash; 18:00 Uhr</td>
+          </tr>
+          <tr>
+            <td>Samstag</td>
+            <td>10:00 &ndash; 14:00 Uhr</td>
+          </tr>
+          <tr>
+            <td>Sonntag</td>
+            <td class="closed">Geschlossen</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- BEWERTUNGEN -->
-<section id="bewertungen">
+<!-- REVIEWS -->
+<section class="reviews" id="bewertungen">
   <div class="container">
-    <span class="section-label">Kundenbewertungen</span>
-    <h2>Was unsere Kunden sagen</h2>
-    <div class="divider"></div>
-    <div class="overall-rating">
-      <div class="overall-score">3,9</div>
-      <div class="overall-meta">
-        <h4>Gesamtbewertung</h4>
-        <div class="overall-stars stars">
-          <span class="star on">â</span>
-          <span class="star on">â</span>
-          <span class="star on">â</span>
-          <span class="star on">â</span>
-          <span class="star off">â</span>
-        </div>
-        <p>Basierend auf 16 Google-Bewertungen</p>
+    <div class="section-label">Kundenbewertungen</div>
+    <h2 class="section-title">Was unsere Kunden sagen</h2>
+    <div class="section-divider"></div>
+
+    <div class="reviews-summary">
+      <div>
+        <div class="summary-score">3,9</div>
+        <div class="summary-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <div class="summary-count">Basierend auf 16 Bewertungen</div>
       </div>
+      <div class="summary-divider"></div>
+      <div class="summary-text">Wir sind stets bem&uuml;ht, unsere Leistungen kontinuierlich zu verbessern und jeden Kunden zufrieden zu stellen. Ihr Feedback ist uns wichtig.</div>
     </div>
+
     <div class="reviews-grid">
 
+      <!-- Review 1 -->
       <div class="review-card">
         <div class="review-header">
           <div class="reviewer-avatar">K</div>
           <div class="reviewer-info">
-            <h4>Kunde</h4>
-            <div class="review-stars">
-              <span class="star on">â</span>
-              <span class="star off">â</span>
-              <span class="star off">â</span>
-              <span class="star off">â</span>
-              <span class="star off">â</span>
-            </div>
+            <div class="reviewer-name">Kunde</div>
+            <div class="review-date">Vor Kurzem</div>
           </div>
         </div>
-        <p class="review-text">Statt Flicken wie gewÃ¼nscht aufzunÃ¤hen, wurden diese aufgebÃ¼gelt und lÃ¶sten sich auch nach kurzer Zeit wieder.</p>
+        <div class="review-stars">
+          <span class="star filled">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+        </div>
+        <div class="review-text">&bdquo;Statt Flicken wie gew&uuml;nscht aufzun&auml;hen, wurden diese aufgeb&uuml;gelt und l&ouml;sten sich auch nach kurzer Zeit wieder.&ldquo;</div>
       </div>
 
+      <!-- Review 2 -->
       <div class="review-card">
         <div class="review-header">
           <div class="reviewer-avatar">K</div>
           <div class="reviewer-info">
-            <h4>Kunde</h4>
-            <div class="review-stars">
-              <span class="star on">â</span>
-              <span class="star off">â</span>
-              <span class="star off">â</span>
-              <span class="star off">â</span>
-              <span class="star off">â</span>
-            </div>
+            <div class="reviewer-name">Kunde</div>
+            <div class="review-date">Vor Kurzem</div>
           </div>
         </div>
-        <p class="review-text">Ãber eine Woche fÃ¼r eine Hose, unfreundliche Ãffnungszeiten fÃ¼r Arbeitende â war um 18:28 am Donnerstag da und geschlossen.</p>
+        <div class="review-stars">
+          <span class="star filled">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+        </div>
+        <div class="review-text">&bdquo;&Uuml;ber eine Woche f&uuml;r eine Hose, unfreundliche &Ouml;ffnungszeiten f&uuml;r Arbeitende - war um 18:28 am Donnerstag da und geschlossen &hellip;&ldquo;</div>
       </div>
 
+      <!-- Review 3 -->
       <div class="review-card">
         <div class="review-header">
           <div class="reviewer-avatar">K</div>
           <div class="reviewer-info">
-            <h4>Kunde</h4>
-            <div class="review-stars">
-              <span class="star on">â</span>
-              <span class="star on">â</span>
-              <span class="star on">â</span>
-              <span class="star on">â</span>
-              <span class="star on">â</span>
-            </div>
+            <div class="reviewer-name">Kunde</div>
+            <div class="review-date">Vor Kurzem</div>
           </div>
         </div>
-        <p class="review-text">Sehr freundlich, alles bestens und gerne wieder.</p>
+        <div class="review-stars">
+          <span class="star filled">&#9733;</span>
+          <span class="star filled">&#9733;</span>
+          <span class="star filled">&#9733;</span>
+          <span class="star filled">&#9733;</span>
+          <span class="star filled">&#9733;</span>
+        </div>
+        <div class="review-text-empty">Keine Kommentare hinterlassen.</div>
       </div>
 
+      <!-- Review 4 -->
       <div class="review-card">
         <div class="review-header">
           <div class="reviewer-avatar">K</div>
           <div class="reviewer-info">
-            <h4>Kunde</h4>
-            <div class="review-stars">
-              <span class="star on">â</span>
-              <span class="star on">â</span>
-              <span class="star off">â</span>
-              <span class="star off">â</span>
-              <span class="star off">â</span>
-            </div>
+            <div class="reviewer-name">Kunde</div>
+            <div class="review-date">Vor Kurzem</div>
           </div>
         </div>
-        <p class="review-text">Ãber die QualitÃ¤t der Reinigungsleistung kann ich leider nichts sagen, denn soweit kam es gar nicht erst. VernachlÃ¤ssigt man den Punkt, dass der verschmutzte Laden laut Schild an der EingangstÃ¼r nur zu bestimmten Zeiten zugÃ¤nglich ist.</p>
+        <div class="review-stars">
+          <span class="star filled">&#9733;</span>
+          <span class="star filled">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+          <span class="star empty">&#9733;</span>
+        </div>
+        <div class="review-text">&bdquo;&Uuml;ber die Qualit&auml;t der Reinigungsleistung kann ich leider nichts sagen, denn soweit kam es gar nicht erst. Vernachl&auml;ssigt man den Punkt, dass der verschmutzte Laden lt. Schild an der Eingangst&uuml;r nur mit Maske betreten werden darf, welche einem dann am Tresen zum Kauf f&uuml;r nur 1&euro;/Stk. angeboten wird, bleibt immer noch eine Bearbeitungszeit von gut einer Woche zu einem &uuml;berh&ouml;hten Preis von 3,10&euro;/Hemd. Ich wollte den Laden auf Grund der guten Bewertungen testen und kann diesen Eindruck nun leider nicht teilen.&ldquo;</div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar">K</div>
+          <div class="reviewer-info">
+            <div class="reviewer-name">Kunde</div>
+            <div class="review-date">Vor Kurzem</div>
+          </div>
+        </div>
+        <div class="review-stars">
+          <span class="star filled">&#9733;</span>
+          <span class="star filled">&#9733;</span>
+          <span class="star filled">&#9733;</span>
+          <span class="star filled">&#9733;</span>
+          <span class="star filled">&#9733;</span>
+        </div>
+        <div class="review-text">&bdquo;Sehr freundlich, alles bestens und gerne wieder.&ldquo;</div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- KONTAKT -->
-<section id="kontakt">
+<!-- CONTACT -->
+<section class="contact" id="kontakt">
   <div class="container">
-    <span class="section-label">Kontakt</span>
-    <h2>So erreichen Sie uns</h2>
-    <div class="divider"></div>
-    <div class="kontakt-grid">
-      <div class="kontakt-info">
-        <div class="kontakt-item">
-          <div class="kontakt-icon">ð</div>
-          <div>
-            <h4>Adresse</h4>
-            <p>DietzgenstraÃe 28<br>13156 Berlin, Deutschland<br>Bezirk Pankow</p>
+    <div class="section-label">Kontakt</div>
+    <h2 class="section-title">So erreichen Sie uns</h2>
+    <div class="section-divider"></div>
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">&#128205;</div>
+          <div class="contact-detail">
+            <strong>Adresse</strong>
+            <span>Dietzgenstra&szlig;e 28, 13156 Berlin<br>Bezirk Pankow, Deutschland</span>
           </div>
         </div>
-        <div class="kontakt-item">
-          <div class="kontakt-icon">ð</div>
-          <div>
-            <h4>Telefon</h4>
-            <a href="tel:+4930914233022">+49 30 91423302</a>
+        <div class="contact-item">
+          <div class="contact-icon">&#128222;</div>
+          <div class="contact-detail">
+            <strong>Telefon</strong>
+            <a href="tel:+4930914 23302">+49 30 91423302</a>
           </div>
         </div>
-        <div class="kontakt-item">
-          <div class="kontakt-icon">ð</div>
-          <div>
-            <h4>Ãffnungszeiten</h4>
-            <p>DiâDo: 10:00â18:30 Uhr<br>Mi, Fr: 10:00â18:00 Uhr<br>Sa: 10:00â14:00 Uhr<br>Mo & So: Geschlossen</p>
+        <div class="contact-item">
+          <div class="contact-icon">&#128336;</div>
+          <div class="contact-detail">
+            <strong>&Ouml;ffnungszeiten</strong>
+            <span>Di &ndash; Do: 10:00 &ndash; 18:30 Uhr<br>Mi &amp; Fr: 10:00 &ndash; 18:00 Uhr<br>Sa: 10:00 &ndash; 14:00 Uhr</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#9733;</div>
+          <div class="contact-detail">
+            <strong>Bewertung</strong>
+            <span>3,9 / 5 &ndash; 16 Bewertungen</span>
           </div>
         </div>
       </div>
-      <div class="cta-box">
-        <h3>Bereit fÃ¼r frische Kleidung?</h3>
-        <p>Bringen Sie Ihre Textilien zu uns â wir reinigen sie professionell und schonend. Rufen Sie uns an oder besuchen Sie uns direkt in der DietzgenstraÃe in Berlin-Pankow.</p>
-        <a href="tel:+4930914233022" class="btn-cta">ð Jetzt anrufen</a>
+      <div class="contact-cta">
+        <h3>Termin &amp; Anfragen</h3>
+        <p>Haben Sie Fragen zu unseren Leistungen oder m&ouml;chten Sie Ihre Textilien zur Reinigung bringen? Rufen Sie uns einfach an &ndash; wir helfen Ihnen gerne weiter!</p>
+        <span class="phone-display">+49 30 91423302</span>
+        <a href="tel:+4930914 23302" class="btn-cta-large">&#128222; Jetzt anrufen</a>
       </div>
     </div>
   </div>
@@ -532,9 +429,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>Reinigungsservice Prestin</strong></p>
-  <p>DietzgenstraÃe 28 Â· 13156 Berlin Â· Tel: <a href="tel:+4930914233022" style="color:rgba(255,255,255,0.65);text-decoration:none;">+49 30 91423302</a></p>
-  <p>Â© 2024 Reinigungsservice Prestin. Alle Rechte vorbehalten.</p>
+  <p>&copy; 2026 <strong>Reinigungsservice Prestin</strong> &ndash; Dietzgenstra&szlig;e 28, 13156 Berlin &ndash; Alle Rechte vorbehalten.</p>
 </footer>
 
 </body>
